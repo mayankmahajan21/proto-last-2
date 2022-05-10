@@ -1,0 +1,146 @@
+﻿<Window x:Class="WpfApp5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        xmlns:language ="clr-namespace:WpfApp5.Properties.languages1"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <XmlDataProvider x:Key="XmlData" Source="C:\Users\mayan\source\repos\WpfApp5\WpfApp5\XMLFile1.xml"/>
+    </Window.Resources>
+    <StackPanel>
+        <TabControl HorizontalAlignment="Left" Height="424" Width="794" Margin="0,0,-0.4,0">
+            <TabItem Header="Bookings" FontWeight="Bold" Foreground="Brown" Background="Wheat" HorizontalAlignment="Left" Margin="0,0,-0.2,0.2" Width="113" Height="23" VerticalAlignment="Bottom">
+                <Grid x:Name="lll" Margin="0,-4,0,-3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.ColumnSpan="2" Margin="0,0,694,-0.2" Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="C:\Users\mayan\Downloads\ven_bg-11.png" Stretch="Fill" Margin="0,-21,-695.4,0" Grid.ColumnSpan="3"  />
+                        <TextBox TextAlignment="Center" FontSize="14" x:Name="T1" HorizontalAlignment="Left" Height="41" Margin="579,17,-624.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Grid.Column="2" TextChanged="T1_TextChanged" />
+                        <TextBox TextAlignment="Center" FontSize="14" x:Name="T2" HorizontalAlignment="Left" Height="41" Margin="579,66,-624.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Grid.Column="2" TextChanged="T2_TextChanged"/>
+                        <Button x:Name="s_details" Background="Maroon" Foreground="White" FontWeight="Bold" FontSize="14" Content="{x:Static language:Resource1.Save}" HorizontalAlignment="Left" Height="41" Margin="581,280,-626.4,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Grid.Column="2"/>
+                        <ListBox x:Name="lb3" FontSize="14" HorizontalAlignment="Left" Height="189" Margin="53,75,-279.4,0" 
+                                 VerticalAlignment="Top" Width="320" Grid.ColumnSpan="2" Grid.Column="1" MouseDoubleClick="Button_Click_4" 
+                                 
+                                 />
+                        <TextBlock x:Name="tbb" Text="{Binding SelectedItem.content, ElementName=lb3}" HorizontalAlignment="Left" Height="33" Margin="743,358,-695.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Grid.Column="2"/>
+                        <DatePicker FontSize="14" x:Name="date" HorizontalAlignment="Left" Height="43" Margin="579,115,-624.4,0" 
+                                    VerticalAlignment="Top" Width="139" Grid.Column="2" SelectedDateFormat ="Short"/>
+                        <ListBox FontSize="14" x:Name="event_list" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="53" Margin="579,168,-625.4,0" VerticalAlignment="Top" Width="140" Grid.Column="2" SelectionChanged="event_list_SelectionChanged_1">
+                            <ListBoxItem x:Name="e1" Content="Birthday" />
+                            <ListBoxItem x:Name="e2" Content="Wedding" />
+                        </ListBox>
+                        <Label x:Name="days_left" Content="{Binding Source={x:Static sys:DateTime.Now}}" HorizontalAlignment="Left" Height="30" Margin="7,28,-113.4,0" VerticalAlignment="Top" Width="200" Visibility="Hidden" Grid.Column="2"/>
+                        <Button Visibility="Hidden" x:Name="ed" Background="Maroon" Foreground="White" FontWeight="Bold" FontSize="14" Content="View Details" HorizontalAlignment="Left" Height="41" Margin="139,273,-184.4,0" VerticalAlignment="Top" Width="139" Click="Button_Click_3" Grid.Column="2"/>
+                        <TextBlock Visibility="Hidden" x:Name="info_orders" HorizontalAlignment="Left" Height="117" Margin="231,222,-322.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Grid.Column="2"/>
+                        <Label x:Name="label2" Visibility="Hidden" HorizontalAlignment="Left" Height="40" Margin="39,13,-42.4,0" VerticalAlignment="Top" Width="97" Grid.Column="2"/>
+                        <Label Visibility="Hidden" x:Name="Event_Type_Binding" Content="{Binding SelectedItem.Content, ElementName=event_list}" HorizontalAlignment="Left" Height="52" Margin="226,37,-261.4,0" VerticalAlignment="Top" Width="129" Grid.Column="2"/>
+                        <ListBox Visibility="Hidden" x:Name="ids" HorizontalAlignment="Left" Height="88" Margin="231,28,-261.4,0" VerticalAlignment="Top" Width="124" Grid.Column="2"/>
+                        <TextBlock x:Name="fname" FontSize="14" HorizontalAlignment="Left" Height="27" Margin="474,17,-459.4,0" TextWrapping="Wrap" Text="{x:Static language:Resource1.First_Name}" VerticalAlignment="Top" Width="79" TextAlignment="Center" Grid.Column="2"/>
+                        <TextBlock x:Name="lname" FontSize="14" HorizontalAlignment="Left" Height="27" Margin="474,66,-459.4,0" TextWrapping="Wrap" Text="{x:Static language:Resource1.Last_Name}" VerticalAlignment="Top" Width="79" TextAlignment="Center" Grid.Column="2"/>
+                        <TextBlock x:Name="e_date" FontSize="14" HorizontalAlignment="Left" Height="43" Margin="474,115,-459.4,0" TextWrapping="Wrap" Text="{x:Static language:Resource1.Event_Date}" VerticalAlignment="Top" Width="79" TextAlignment="Center" Grid.Column="2"/>
+                        <TextBlock x:Name="hi" FontSize="14" HorizontalAlignment="Left" Height="53" Margin="474,168,-463.4,0" TextWrapping="Wrap" Text="{x:Static language:Resource1.Occasion}" VerticalAlignment="Top" Width="83" TextAlignment="Center" Grid.Column="2"/>
+                        <Label x:Name="dd_label" Visibility="Hidden" Content="{Binding SelectedItem.Content, ElementName=dd1}" HorizontalAlignment="Left" Height="40" Margin="221,13,-349.4,0" VerticalAlignment="Top" Width="222" Grid.Column="2"/>
+                        <TextBox TextAlignment="Center" FontSize="14" x:Name="search_lb" HorizontalAlignment="Left" Height="29" Margin="195,40,-279.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" TextChanged="search_lb_TextChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
+                        <TextBlock TextAlignment="Center" x:Name="clear_selection"  PreviewMouseDown="clear_sel" FontSize="14" HorizontalAlignment="Left" Margin="581,-7,-624.4,389" TextWrapping="Wrap" Text="{x:Static language:Resource1.Clear_Selection}" Width="137" Grid.ColumnSpan="3"/>
+                        <ComboBox x:Name="cb1" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="53,39,-83.4,0" VerticalAlignment="Top" Width="124" Height="29">
+                            <ComboBox.Background>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FFF0F0F0"/>
+                                    <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                                </RadialGradientBrush>
+                            </ComboBox.Background>
+                            <ComboBoxItem Content="Name" />
+                            <ComboBoxItem Content="Date" />
+                        </ComboBox>
+                        <Label Visibility="Hidden" x:Name="cbb" Content="{Binding SelectedItem.Content, ElementName=cb1}" HorizontalAlignment="Left" Margin="404,13,-463.4,338" Width="153" Grid.ColumnSpan="3"/>
+                        <Label Visibility="Hidden" x:Name="event_id" Content="{Binding SelectedItem.Content, ElementName=lb3}" HorizontalAlignment="Left" Margin="409,215,-407.4,136" Width="92" Grid.ColumnSpan="3"/>
+                        <TextBox TextAlignment="Center" FontSize="14" x:Name="g_adults" HorizontalAlignment="Left" Height="41" Margin="515,230,-486.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Column="2" TextChanged="g_adults_TextChanged"/>
+                        <TextBox TextAlignment="Center" FontSize="14" x:Name="g_kids" HorizontalAlignment="Left" Height="41" Margin="667,230,-625.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Column="2" RenderTransformOrigin="1.249,0.776" TextChanged="g_kids_TextChanged"/>
+                        <TextBlock x:Name="a_count" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="421,231,-415.4,87" TextWrapping="Wrap" Width="88" Grid.ColumnSpan="3" Text="{x:Static language:Resource1.Expected_no__of_Adults}" />
+                        <TextBlock x:Name="k_count" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="574,231,-573.4,129" TextWrapping="Wrap" Width="93" Grid.ColumnSpan="3" Text="{x:Static language:Resource1.Expected_no__of_Kids}"/>
+                        <TextBlock TextAlignment="Center" x:Name="help_text_1" FontSize="14" HorizontalAlignment="Left" Margin="50,284,-276.4,80" TextWrapping="Wrap" Text="Double click on an item to view details" Width="320" Grid.ColumnSpan="3"/>
+                        <ComboBox BorderBrush="Aquamarine" Background="#FFFAFAFA" Foreground="#FF060000" FontSize="10" FontWeight="SemiBold" x:Name="lang_cb" HorizontalAlignment="Left" Margin="9,4,0,373" Width="42" Grid.ColumnSpan="3" RenderTransformOrigin="1.236,-9.126" IsSynchronizedWithCurrentItem="False" SelectionChanged="lang_cb_SelectionChanged" SelectedIndex="0" >
+                            <ComboBoxItem Content="EN" FontSize="10" FontWeight="SemiBold"/>
+                            <ComboBoxItem Content="DE" FontSize="10" FontWeight="SemiBold"/>
+                        </ComboBox>
+                        <Button Background="Red" BorderBrush="Red" HorizontalAlignment="Left" Margin="0,75,0,299" Width="53" Grid.ColumnSpan="3"/>
+                        <Button Background="Blue" BorderBrush="Blue" HorizontalAlignment="Left" Margin="0,124,0,251" Width="53" Grid.ColumnSpan="3"/>
+                        <TextBlock TextAlignment="Center" Foreground="White"  FontSize="10" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="0,75,0,297" TextWrapping="Wrap" Text="Event in 7 days" Width="48" Grid.ColumnSpan="3"/>
+                        <TextBlock TextAlignment="Center" Foreground="White" FontSize="10" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="-1,124,0,248" TextWrapping="Wrap" Text="Event in 7-14 days" Width="52" Grid.ColumnSpan="3"/>
+
+
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Manage Bookings" FontWeight="Bold"  Margin="0.2,0,-6.6,-1.8" RenderTransformOrigin="2.312,0.851" Foreground="Brown" Background="Wheat">
+                <Grid x:Name="bbb" Margin="0,-3,0,3.6" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="774*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="C:\Users\mayan\Downloads\ven_bg-11.png" Stretch="Fill" Margin="0,0,0.403,0" Grid.ColumnSpan="3"  />
+                    <DataGrid FontWeight="SemiBold" Background="White" CanUserSortColumns="True" x:Name="dg_view" Grid.Column="2" HorizontalAlignment="Stretch" Height="164" Margin="49.797,114,75.403,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tb1" Grid.Column="2" HorizontalAlignment="Left" Height="37" Margin="196.797,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" TextChanged="TextBox_TextChanged"/>
+                    <ComboBox FontSize="12" FontWeight="SemiBold" x:Name="DG_CB" Grid.Column="2" HorizontalAlignment="Left" Height="37" Margin="49.797,62,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="DG_CB_SelectionChanged">
+                        <ComboBoxItem Content="ALL"/>
+                        <ComboBoxItem Content="First Name"/>
+                        <ComboBoxItem Content="Last Name"/>
+                        <ComboBoxItem Content="Event Date"/>
+                        <ComboBoxItem Content="Occasion"/>
+                        <ComboBoxItem Content="Days Left"/>
+                        <ComboBoxItem Content="No. of Guests"/>
+                        <ComboBoxItem Content="Cost for Food"/>
+                        <ComboBoxItem Content="Cost for Drinks"/>
+                        <ComboBoxItem Content="Cost for Venue"/>
+
+
+
+                    </ComboBox>
+                    <Label Visibility="Hidden" Content="{Binding SelectedItem.Content, ElementName=DG_CB}" x:Name="filter1" Grid.Column="2" HorizontalAlignment="Left" Height="36" Margin="590.797,62,0,0" VerticalAlignment="Top" Width="76"/>
+                    <TextBlock Visibility="Hidden" Background="White" x:Name="row_count" Grid.Column="2" HorizontalAlignment="Center" Height="36" FontSize="14" TextAlignment="Center"
+                               Margin="455.797,62,127.403,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
+                    <TextBlock FontWeight="SemiBold" Grid.Column="2" HorizontalAlignment="Left" Height="21" Margin="455.797,283,0,0" TextWrapping="Wrap" Text="Cost for Food and Drinks is per person (in €)" VerticalAlignment="Top" Width="244"/>
+                    <TextBlock FontWeight="SemiBold" Grid.Column="2" HorizontalAlignment="Left" Height="21" Margin="524.797,304,0,0" TextWrapping="Wrap" Text="Cost for Venue is per hour (in €)" VerticalAlignment="Top" Width="175"/>
+                    <ComboBox Visibility="Hidden" x:Name="date_datagrid" Grid.Column="2" HorizontalAlignment="Left" Height="37" Margin="388.797,62,0,0" VerticalAlignment="Top" Width="56" SelectionChanged="date_datagrid_SelectionChanged">
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                        <ComboBoxItem Content="5"/>
+                        <ComboBoxItem Content="6"/>
+                        <ComboBoxItem Content="7"/>
+                        <ComboBoxItem Content="8"/>
+                        <ComboBoxItem Content="9"/>
+                        <ComboBoxItem Content="10"/>
+                        <ComboBoxItem Content="11"/>
+                        <ComboBoxItem Content="12"/>
+                        <ComboBoxItem Content="All"/>
+                    </ComboBox>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="28" TextAlignment="Center" Margin="74.797,34,0,0" TextWrapping="Wrap" Text="Search Filters" VerticalAlignment="Top" Width="85"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="28" TextAlignment="Center" Margin="236.797,34,0,0" TextWrapping="Wrap" Text="Search Value" VerticalAlignment="Top" Width="93"/>
+                    <TextBlock Visibility="Hidden" x:Name="m_label" Grid.Column="2" HorizontalAlignment="Left" Height="28" TextAlignment="Center" Margin="389.797,34,0,0" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top" Width="56"/>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </StackPanel>
+</Window>

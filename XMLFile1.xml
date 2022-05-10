@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlDataProvider>
+  <Events id="one1">
+    <ID>1</ID>
+    <FName>v</FName>
+    <LName>v</LName>
+    <Date>05/11/2022</Date>
+    <Event_Type>Birthday</Event_Type>
+    <Venue>Hall 2</Venue>
+    <Food></Food>
+    <Guest_No_A>0</Guest_No_A>
+    <Guest_No_K>50</Guest_No_K>
+    <Venue_Cost>13</Venue_Cost>
+    <Cake>Vanilla</Cake>
+    <Duration>3</Duration>
+    <tier>1</tier>
+    <Days>1</Days>
+  </Events>
+  <Events id="one2">
+    <ID>2</ID>
+    <FName>k</FName>
+    <LName>k</LName>
+    <Date>05/28/2022</Date>
+    <Event_Type>Wedding</Event_Type>
+    <Venue></Venue>
+    <Food></Food>
+    <Guest_No_A>11</Guest_No_A>
+    <Guest_No_K>12</Guest_No_K>
+    <Venue_Cost>0</Venue_Cost>
+    <Cake></Cake>
+    <Duration>3</Duration>
+    <tier>1</tier>
+    <Days>18</Days>
+  </Events>
+  <Events id="one3">
+    <ID>3</ID>
+    <FName>d</FName>
+    <LName>d</LName>
+    <Date>05/29/2022</Date>
+    <Event_Type>Birthday</Event_Type>
+    <Venue></Venue>
+    <Food></Food>
+    <Guest_No_A>0</Guest_No_A>
+    <Guest_No_K>33</Guest_No_K>
+    <Venue_Cost>0</Venue_Cost>
+    <Cake></Cake>
+    <Duration>3</Duration>
+    <tier>1</tier>
+    <Days>19</Days>
+  </Events>
+  <Events id="one4">
+    <ID>4</ID>
+    <FName>ff</FName>
+    <LName>ff</LName>
+    <Date>05/18/2022</Date>
+    <Event_Type>Wedding</Event_Type>
+    <Venue></Venue>
+    <Food></Food>
+    <Guest_No_A>11</Guest_No_A>
+    <Guest_No_K>11</Guest_No_K>
+    <Venue_Cost>0</Venue_Cost>
+    <Cake>Hazelnut with Chocolate Buttercream</Cake>
+    <Duration>3</Duration>
+    <tier>3</tier>
+    <Days>8</Days>
+  </Events>
+</XmlDataProvider>
